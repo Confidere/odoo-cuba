@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="transfer_account_id" model="account.account.template">
+            <field name="name">Cuentas de Transferencia</field>
+            <field name="code">111</field>
+            <field name="reconcile" eval="True"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+        </record>
+
+        <record id="cu_chart_template" model="account.chart.template">
+            <field name="name">CUBA - Plan de Cuentas</field>
+            <field name="code_digits">8</field>
+            <field name="cash_account_code_prefix">100</field>
+            <field name="bank_account_code_prefix">110</field>
+            <field name="transfer_account_id" ref="transfer_account_id"/>
+            <field name="currency_id" ref="base.CUP"/>
+        </record>
+        <record id="transfer_account_id" model="account.account.template">
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 10	GRUPO DE ACTIVOS -->
+        <!-- 10.1	ACTIVOS CIRCULANTE -->
+        <!-- 135	Cuentas por Cobrar a Corto Plazo -->
+        <record id="135_00001" model="account.account.template">
+            <field name="code">13500001</field>
+            <field name="name">Cuentas por Cobrar</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_receivable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 10.2	ACTIVOS FIJOS -->
+        <!-- 200	Activos Fijos Tangibles -->
+        <record id="200_00001" model="account.account.template">
+            <field name="code">20000001</field>
+            <field name="name">Activos Fijos Tangibles</field>
+            <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 10.3	CUENTAS REGULADORAS DE ACTIVOS -->
+        <!-- 300	Depresiacion de Activos Fijos Tangibles -->
+        <record id="300_00001" model="account.account.template">
+            <field name="code">30000001</field>
+            <field name="name">Depresiacion de Activos Fijos Tangibles</field>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 20	GRUPO DE PASIVOS -->
+        <!-- 20.1	PASIVOS CIRCULANTES -->
+        <!-- 405	Cuentas por Pagar a Corto Plazo -->
+        <record id="405_00001" model="account.account.template">
+            <field name="code">40500001</field>
+            <field name="name">Cuentas por Pagar</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 470	Prestamos Bancarios a Corto Plazo -->
+        <record id="470_00001" model="account.account.template">
+            <field name="code">47000001</field>
+            <field name="name">Prestamos Bancarios a Corto Plazo</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 20.2	PASIVOS A LARGO PLAZO -->
+        <!-- 520	Prestamos Bancarios a Largo Plazo -->
+        <record id="520_00001" model="account.account.template">
+            <field name="code">52000001</field>
+            <field name="name">Prestamos Bancarios a Largo Plazo</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 30	GRUPO DE PATRIMONIO -->
+        <!-- 600	Patrimonio del TCP -->
+        <!-- 600 10	Saldo al Inicio del Ejercicio -->
+        <record id="600_10001" model="account.account.template">
+            <field name="code">60010001</field>
+            <field name="name">Saldo al Inicio del Ejercicio</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <!-- 600 20	Incrementos de aportes del TCP en el ejercicio contable -->
+        <record id="600_20001" model="account.account.template">
+            <field name="code">60020001</field>
+            <field name="name">Incrementos de aportes del TCP en el ejercicio contable</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <!-- 600 30	Erogaciones efectuadas por el TCP en el ejercicio contable -->
+        <record id="600_30001" model="account.account.template">
+            <field name="code">60030001</field>
+            <field name="name">Erogaciones efectuadas por el TCP en el ejercicio contable</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <!-- 600 40	Pagos de Cuotas del Impuesto sobre Ingresos Personales -->
+        <record id="600_40001" model="account.account.template">
+            <field name="code">60040001</field>
+            <field name="name">Pagos de Cuotas del Impuesto sobre Ingresos Personales</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <!-- 600 50	Contribución a la Seguridad Social -->
+        <record id="600_50001" model="account.account.template">
+            <field name="code">60050001</field>
+            <field name="name">Contribución a la Seguridad Social</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 610	Utilidades Retenidas -->
+        <record id="610_00001" model="account.account.template">
+            <field name="code">63000001</field>
+            <field name="name">Utilidad Retenida</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 620	Perdidas -->
+        <record id="620_00001" model="account.account.template">
+            <field name="code">62000001</field>
+            <field name="name">Perdidas</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 40	GRUPO DE CUENTAS NOMINALES DEUDORAS -->
+        <!-- 40.1	CUENTAS NOMINALES DEUDORAS -->
+        <!-- 800	Gastos de Operación -->
+        <!-- 800 11000	Materias Primas y Materiales -->
+        <record id="800_11001" model="account.account.template">
+            <field name="code">80011001</field>
+            <field name="name">Materias Primas y Materiales</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+        <!-- 800 30000	Combustible -->
+        <record id="800_30001" model="account.account.template">
+            <field name="code">80030001</field>
+            <field name="name">Combustible</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+        <!-- 800 40000	Energía Eléctrica -->
+        <record id="800_40001" model="account.account.template">
+            <field name="code">80040001</field>
+            <field name="name">Energía Eléctrica</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+        <!-- 800 50000	Remuneraciones al personal contratado -->
+        <record id="800_50001" model="account.account.template">
+            <field name="code">80050001</field>
+            <field name="name">Remuneraciones al personal contratado</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+        <!-- 800 70000	Remuneraciones al personal contratado -->
+        <record id="800_70001" model="account.account.template">
+            <field name="code">80070001</field>
+            <field name="name">Depreciación de Activos Fijos Tangibles</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+        <!-- 800 80000	Otros Gastos monetarios y financieros -->
+        <record id="800_80001" model="account.account.template">
+            <field name="code">80080001</field>
+            <field name="name">Otros Gastos monetarios y financieros</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]"/>-->
+        </record>
+        <record id="800_80002" model="account.account.template">
+            <field name="code">80080002</field>
+            <field name="name">Pérdidas por Tasa de Cambio</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]"/>-->
+        </record>
+
+        <!-- 810	Impuestos y Tasas -->
+        <!-- 810 10	Impuestos sobre las Ventas -->
+        <record id="810_10001" model="account.account.template">
+            <field name="code">81010001</field>
+            <field name="name">Impuestos sobre las Ventas</field>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+        <!-- 810 20	Impuestos sobre los Servicios Públicos -->
+        <record id="810_20001" model="account.account.template">
+            <field name="code">81020001</field>
+            <field name="name">Impuestos sobre los Servicios Públicos</field>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+        <!-- 810 30	Impuesto por la Utilización de la Fuerza de Trabajo -->
+        <record id="810_30001" model="account.account.template">
+            <field name="code">81030001</field>
+            <field name="name">Impuesto por la Utilización de la Fuerza de Trabajo</field>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+        <!-- 810 40	Otros Impuestos y Tasas -->
+        <record id="810_40001" model="account.account.template">
+            <field name="code">81040001</field>
+            <field name="name">Otros Impuestos y Tasas</field>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+
+        <!-- 40.2	CUENTAS NOMINALES ACREDORAS -->
+        <!-- 900	Ventas -->
+        <record id="900_00001" model="account.account.template">
+            <field name="code">90000001</field>
+            <field name="name">Ventas</field>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+
+        <!-- 920	Ingresos Financieros -->
+        <record id="920_00001" model="account.account.template">
+            <field name="name">Ingresos por Tasa de Cambio</field>
+            <field name="code">92000001</field>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]"/>-->
+        </record>
+
+        <!-- 50	CUENTA DE CIERRE -->
+        <!-- 999	Resultado -->
+        <record id="999_00001" model="account.account.template">
+            <field name="code">99900001</field>
+            <field name="name">Resultado</field>
+            <field name="user_type_id" ref="account.data_unaffected_earnings"/>
+            <field name="chart_template_id" ref="cu_chart_template" />
+        </record>
+
+        <!-- chart template -->
+        <record id="cu_chart_template" model="account.chart.template">
+            <field name="property_account_receivable_id" ref="135_00001"/>
+            <field name="property_account_payable_id" ref="405_00001"/>
+            <field name="property_account_expense_categ_id" ref="800_00001"/>
+            <field name="property_account_income_categ_id" ref="900_00001"/>
+            <!--<field name="property_stock_account_input_categ_id" ref="183_0101"/>-->
+            <!--<field name="property_stock_account_output_categ_id" ref="183_0102"/>-->
+            <field name="income_currency_exchange_account_id" ref="920_00001"/>
+            <field name="expense_currency_exchange_account_id" ref="800_80002"/>
+        </record>
+
+        <!-- Tax template for sale -->
+        <!--<record id="sale_tax_template" model="account.tax.template">-->
+            <!--<field name="chart_template_id" ref="cu_chart_template"/>-->
+            <!--<field name="name">Servicio</field>-->
+            <!--<field name="amount">10</field>-->
+            <!--<field name="type_tax_use">sale</field>-->
+            <!--<field name="account_id" ref="810_10001"/>-->
+            <!--<field name="refund_account_id" ref="810_10001"/>-->
+        <!--</record>-->
+
+    </data>
+</odoo>
