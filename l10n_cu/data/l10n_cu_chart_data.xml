@@ -2,7 +2,247 @@
 <odoo>
     <data noupdate="1">
 
+        <record id="transfer_account_id" model="account.account.template">
+            <field name="name">Cuentas de Transferencia</field>
+            <field name="code">111</field>
+            <field name="reconcile" eval="True"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+        </record>
 
+        <record id="cu_chart_template" model="account.chart.template">
+            <field name="name">CUBA - Plan de Cuentas</field>
+            <field name="code_digits">7</field>
+            <field name="cash_account_code_prefix">101</field>
+            <field name="bank_account_code_prefix">110</field>
+            <field name="transfer_account_id" ref="transfer_account_id"/>
+            <field name="currency_id" ref="base.CUP"/>
+        </record>
+        <record id="transfer_account_id" model="account.account.template">
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 10.1	ACTIVOS CIRCULANTE -->
+        <!-- 135	Cuentas por Cobrar a Corto Plazo -->
+        <record id="135_0001" model="account.account.template">
+            <field name="code">1350001</field>
+            <field name="name">Cuentas por Cobrar</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_receivable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <record id="135_0050" model="account.account.template">
+            <field name="code">1350050</field>
+            <field name="name">Sector Cooperativo</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_receivable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <record id="135_0060" model="account.account.template">
+            <field name="code">1350060</field>
+            <field name="name">Personas Naturales</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_receivable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 183	Materias Primas y Materiales -->
+        <record id="183_0101" model="account.account.template">
+            <field name="code">1830101</field>
+            <field name="name">Entradas de Productos</field>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <record id="183_0102" model="account.account.template">
+            <field name="code">1830102</field>
+            <field name="name">Salidas de Productos</field>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 185	Partes y Piezas de Repuestos -->
+        <record id="185_0100" model="account.account.template">
+            <field name="code">1850100</field>
+            <field name="name">Almacen de Piezas</field>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <record id="185_0101" model="account.account.template">
+            <field name="code">1850101</field>
+            <field name="name">Respuestos</field>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 187	Utiles y Herramientas -->
+        <!-- 188	Produccion Terminada -->
+        <!-- 193	Alimentos -->
+
+
+        <!-- 10.2	ACTIVOS A LARGO PLAZO -->
+        <!-- 218	Cuentas por Cobrar a Largo Plazo -->
+        <!-- 255	Inversiones a Largo Plazo o Permanentes -->
+
+
+        <!-- 10.3	ACTIVOS FIJOS -->
+        <!-- 240	Activos Fijos Tangibles -->
+        <!-- 242	Equipos y Productos -->
+        <!-- 255	Activos Fijos Intangibles -->
+
+
+        <!-- 10.4	OTROS ACTIVOS -->
+
+
+        <!-- 20	PASIVOS -->
+        <!-- 20.1	PASIVOS CIRCULANTES -->
+        <!-- 405	Cuentas por Pagar a Corto Plazo -->
+        <record id="405_0001" model="account.account.template">
+            <field name="code">4050001</field>
+            <field name="name">Cuentas por Pagar</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <record id="405_0050" model="account.account.template">
+            <field name="code">4050050</field>
+            <field name="name">Sector Cooperativo</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <record id="405_0060" model="account.account.template">
+            <field name="code">4050060</field>
+            <field name="name">Personas Naturales</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 421	Cuentas por Pagar Activos Fijos Tangibles -->
+        <record id="421_0050" model="account.account.template">
+            <field name="code">4210050</field>
+            <field name="name">Sector Cooperativo</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <record id="421_0060" model="account.account.template">
+            <field name="code">4210060</field>
+            <field name="name">Personas Naturales</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 455	Nominas por Pagar -->
+        <record id="455_0001" model="account.account.template">
+            <field name="code">4550001</field>
+            <field name="name">Nominas por Pagar</field>
+            <field eval="True" name="reconcile"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 30	PATRIMONIO NETO -->
+        <!-- 600	Patrimonio -->
+        <record id="600_0001" model="account.account.template">
+            <field name="code">6000001</field>
+            <field name="name">Capital Inicial</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+        <record id="600_0002" model="account.account.template">
+            <field name="code">6000002</field>
+            <field name="name">Depreciacion</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 630	Utilidades Retenidas -->
+        <record id="630_0001" model="account.account.template">
+            <field name="code">6300001</field>
+            <field name="name">Utilidades Retenidas</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 640	Perdidas -->
+        <record id="640_0001" model="account.account.template">
+            <field name="code">6400001</field>
+            <field name="name">Perdidas</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 699	Transitoria de Sistemas Automatizados -->
+        <record id="699_0001" model="account.account.template">
+            <field name="code">6990001</field>
+            <field name="name">Transitoria de Sistemas Automatizados</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+        </record>
+
+        <!-- 8	CUENTAS NOMINALES DEUDORAS -->
+        <!-- 800	Devoluciones y Rebajas en Ventas -->
+
+        <!-- 810	Gastos de Compras -->
+        <record id="810_0001" model="account.account.template">
+            <field name="code">8100001</field>
+            <field name="name">Gastos de Compras</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+
+        <!-- 835	Gastos Financieros -->
+        <record id="835_0001" model="account.account.template">
+            <field name="code">8350001</field>
+            <field name="name">Gastos por Tasa de Cambio</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]"/>-->
+        </record>
+
+        <!-- 9	CUENTAS NOMINALES ACREDORAS -->
+        <!-- 900	Ventas de Mercancias -->
+        <record id="900_0001" model="account.account.template">
+            <field name="code">9000001</field>
+            <field name="name">Ventas de Mercancias</field>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
+
+        <!-- 920	Ingresos Financieros -->
+        <record id="920_0001" model="account.account.template">
+            <field name="name">Ingresos por Tasa de Cambio</field>
+            <field name="code">9200001</field>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_financing')])]"/>-->
+        </record>
+
+        <!-- 60	CUENTA DE CIERRE -->
+        <!-- 999	Resultado -->
+        <record id="999_0001" model="account.account.template">
+            <field name="code">9990001</field>
+            <field name="name">Pérdidas/ganancias no distribuídas</field>
+            <field name="user_type_id" ref="account.data_unaffected_earnings"/>
+            <field name="chart_template_id" ref="cu_chart_template" />
+        </record>
+
+        <!-- chart template -->
+        <record id="cu_chart_template" model="account.chart.template">
+            <field name="property_account_receivable_id" ref="135_0001"/>
+            <field name="property_account_payable_id" ref="405_0001"/>
+            <field name="property_account_expense_categ_id" ref="810_0001"/>
+            <field name="property_account_income_categ_id" ref="900_0001"/>
+            <field name="property_stock_account_input_categ_id" ref="183_0101"/>
+            <field name="property_stock_account_output_categ_id" ref="183_0102"/>
+            <field name="income_currency_exchange_account_id" ref="920_0001"/>
+            <field name="expense_currency_exchange_account_id" ref="835_0001"/>
+        </record>
 
     </data>
 </odoo>

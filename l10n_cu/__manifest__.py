@@ -12,10 +12,11 @@ Plan contable cubano de acuerdo a disposiciones vigentes.
 
     """,
     'author': "Confidere",
-    'website': "http://confidere.brazzisoft.com",
+    'website': "http://fb.me/confideresoft",
     'category': 'Localization',
     'version': '0.1',
     'depends': [
+        'base',
         'account'
     ],
     'data': [

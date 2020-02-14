@@ -137,6 +137,13 @@
         <!-- 40	GRUPO DE CUENTAS NOMINALES DEUDORAS -->
         <!-- 40.1	CUENTAS NOMINALES DEUDORAS -->
         <!-- 800	Gastos de Operación -->
+        <record id="800_00001" model="account.account.template">
+            <field name="code">80000001</field>
+            <field name="name">Gastos de Operación</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cu_chart_template"/>
+            <!--<field name="tag_ids" eval="[(6,0,[ref('account.account_tag_operating')])]"/>-->
+        </record>
         <!-- 800 11000	Materias Primas y Materiales -->
         <record id="800_11001" model="account.account.template">
             <field name="code">80011001</field>
