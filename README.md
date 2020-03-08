@@ -5,10 +5,11 @@ Repositorio central de la localización cubana.
 #### Legislación vigente
 
 - [Resolución No. 472/2012 Establece el Nomenclador de cuentas contables y su uso y contenido aplicable al gobierno.](docs/2013_003_GO_O_MFP_Resolucion_472-2012.pdf)
-- [Resolución No. 426/2012 Establece el Nomenclador de cuentas contables y su uso y contenido aplicable a las Cooperativas.](https://sites.google.com/site/tcpdload/home/pdf/MFP_Res_426-2012_NIF_Nomenclador.pdf?attredirects=0&d=1)
-- [Resolución No. 386/2010 Normas para la contabilidad simplificada a que están obligados los TCP](https://sites.google.com/site/tcpdload/home/pdf/MFP_Res_386-2010_NCC_TCP.pdf?attredirects=0&d=1)
-- [Ley 113 Sistema Tributario](http://www.mfp.cu/legislaciones/2012/L-113-2012.pdf)
-- [Resolución No.294-2005](http://www.actaf.co.cu/index.php?option=com_mtree&task=att_download&link_id=374&cf_id=24)
+- [Resolucion No. 433/2012 Proformas de Estados Financieros para la actividad empresarial, unidades presupuestadas de tratamiento especial y el sector cooperativo agropecuario y no agropecuario](docs/MFP_Resolucion_433-2012_NEC5_EF.pdf)
+- [Resolución No. 426/2012 Establece el Nomenclador de cuentas contables y su uso y contenido aplicable a las Cooperativas.](docs/MFP_Resolucion_426-2012_Modificacion_del_MNCIF_para_Cooperativas.pdf)
+- [Ley 113 Sistema Tributario](docs/2012_053_GO_O_Ley_113_y_Decreto_308.pdf)
+- [Resolución No. 386/2010 Normas para la contabilidad simplificada a que están obligados los TCP](docs/2010_038_GO_EX_MFP_Resolucion_386-2010_NCC_TCP.pdf)
+- [Resolución No. 294/2005](docs/MFP_Resolucion_294-2005.pdf)
 
 #### Localizaciones Modelos
 
