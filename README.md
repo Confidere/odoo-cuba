@@ -8,7 +8,7 @@ Repositorio central de la localización cubana.
 - [Resolucion No. 433/2012 Proformas de Estados Financieros para la actividad empresarial, unidades presupuestadas de tratamiento especial y el sector cooperativo agropecuario y no agropecuario](docs/MFP_Resolucion_433-2012_NEC5_EF.pdf)
 - [Resolución No. 426/2012 Establece el Nomenclador de cuentas contables y su uso y contenido aplicable a las Cooperativas.](docs/MFP_Resolucion_426-2012_Modificacion_del_MNCIF_para_Cooperativas.pdf)
 - [Ley 113 Sistema Tributario](docs/2012_053_GO_O_Ley_113_y_Decreto_308.pdf)
-- [Ressolicón No. 386/2010 Normas para la contabilidad simplificada a que están obligados los TCP](docs/2010_038_GO_EX_MFP_Resolucion_386-2010_NCC_TCP.pdf)
+- [Resolución No. 386/2010 Normas para la contabilidad simplificada a que están obligados los TCP](docs/2010_038_GO_EX_MFP_Resolucion_386-2010_NCC_TCP.pdf)
 - [Resolución No. 294/2005](docs/MFP_Resolucion_294-2005.pdf)
 
 #### Localizaciones Modelos
